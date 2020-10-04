@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang = ja>
+    <head>
+        <meta charset="UTF-8">
+        <title>JavaScriptの問題演習</title>
+    </head>
+    <body>
+        <script>
+        // -問題2-------------------
+            // const myName = '汰';
+            // const myAge = '27';
+            // console.log(myName,myAge);
+        
+        // -問題3-------------------
+            // const omikuji = ['大吉','小吉','吉','凶'];
+            // const rnd = Math.floor(Math.random()*omikuji.length);
+            // console.log(omikuji[rnd]);
+            
+        // -問題4-1(ダイエットアプリ)-------------------
+        //   const min = 59 ; 
+        //   const max = 90 ;
+        //   const a = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+        //   alert('あなたの体重は'+ a +'kgです' ) //59~90までのランダムな数値を出す記載
+           
+        //   const weight = a;
+        //   if(weight >= 80){
+        //       console.log('もっと頑張りましょう');
+        //   }else if(weight >=70){
+        //       console.log('確実に成果が出ていますよ');
+        //   }else if(weight >60){
+        //       console.log('ついにここまで来ましたね');
+        //   }else{
+        //       console.log('ダイエット成功です！');
+        //   }
+           
+        // -問題4-2(鳴き声アプリ)-------------------
+        //   const animal = ['犬','猫','牛','ライオン','豚'];
+        //   const rnd = Math.floor(Math.random()*animal.length);
+        //   console.log('今日のラッキー動物は'+animal[rnd] +'です');
+    
+        //       switch(animal[rnd]){
+        //         case'犬':
+        //             console.log('ワンワン！');
+        //             break;
+        //         case'猫':
+        //             console.log('にゃーん！');
+        //             break;
+        //         case'牛':
+        //             console.log('モー！');
+        //             break;
+        //         case'ライオン':
+        //             console.log('ガオー！');
+        //             break;
+        //         case'豚':
+        //             console.log('ブー！');
+        //             break;
+        //         default:
+        //             console.log('該当する鳴き声がありません');
+        //       }
+               
+        // -問題5(コマンドバトルゲーム)-------------------
+        // let enemy = 10;
+        // let command;
+        // let random;
+        
+        // while(true){
+        //     command = prompt('敵が現れた！(【1】攻撃 【2】逃げる)');
+        //     random = Math.floor(Math.random()*10);
+            
+        //     //攻撃を選択した場合
+        //     if(command === '1'){
+        //         enemy = enemy-random;
+        //         console.log(random + 'の攻撃！');
+        //         if(enemy <= 0){
+        //             console.log('敵を倒した！');
+        //             break;
+        //         }
+        //         console.log('敵の体力は残り'+ enemy + 'です');
+                
+        //     //逃げるを選択した場合
+        //     }else if(command === '2'){
+        //         console.log('無事に逃げました');
+        //         break;
+        //     }
+        // }
+        // console.log('ゲーム終了');
+        
+        // -問題6(通過換算アプリ)-------------------
+        // const Dollar = 108;
+        // const getYenToDollar = (number) =>{
+        //     return number * Dollar;
+        // }
+        //     while(true){
+        //         const money = prompt('ドルから円に換算します');
+        //         if(money){
+        //         console.log(getYenToDollar(money)+'円です')
+        //     }else break;
+
+        // }
+        
+        const yen = 100 ; 
+        const getDollorToYen = (number) =>{
+              return number * yen;    
+        }
+        
+        while(true){
+            const money = prompt('円をドルに換算します');
+            if(money){
+                console.log(getDollorToYen(money));
+            }else break;
+        }
+          
+        </script>
+    </body>
+    
+</html>

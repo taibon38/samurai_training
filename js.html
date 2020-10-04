@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScriptの練習</title>
+</head>
+
+<body>
+
+
+  <script>
+    // // -----関数-------
+    // 関数宣言の場合
+    function myFunc1() {
+      console.log('これは関数宣言です');
+    }
+    myFunc1(); //関数の実行
+
+    function myFunc1() {
+      console.log('これは2つ目の関数宣言です');
+    }
+    myFunc1(); //関数の実行
+
+
+    //関数式の場合
+    const myFunc2 = () => {
+      console.log('これは関数式です');
+    }
+    myFunc2();
+
+    const myFunc3 = () => {
+      console.log('これは2つ目の関数式です')
+    }
+    myFunc3();
+
+    //引数の活用
+    const myFunc = (keyword) => {
+      console.log('指定した文字は「' + keyword + '」ですね？');
+    }
+    myFunc('プログラミング');
+
+    //検索機能を作ってみる
+    const products = ['テレビ', '冷蔵庫', '机', 'スマホ', '本棚', '椅子', 'テーブル'];
+
+    const search = (items, target) => {
+      const result = items.filter(item => item === target);
+
+      //returnを利用して戻り値を指定
+      if (result.length) {
+        return('商品が見つかりました!');
+      }else {
+        return('お探しの商品は見つかりませんでした');
+      }
+    }
+    console.log(search(products,'スマホ'));
+        //i上の例ではifの条件式をresult.lengthにしています。該当商品がない場合に空っぽの配列になり、lengthプロパティの値は0になります。
+        //つまり、該当商品がない場合result.lengthはfalseとなり、else内の処理が実行されます。
+        //一方で、該当商品が存在していればlengthの値は1以上になり、result.lengthはtrueとなるためif内の処理が実行されます。
+    
+    //戻り値(return)を使ってみる
+    const myNumber = 10;
+    const getDouble = (number) => {
+      return number * 2; //決まった法則(ex.y=2xの部分) returnは、関数の実行結果を表す。実行結果が必要な場合→変数に代入やconsoleに出力する場合。 returnが無くても処理はされている。
+      } // number = xに該当する部分
+      console.log(getDouble(myNumber));　//getDouble関数は、number引数を取る。　y=2xの、xを指定しないと結果が成り立たないことと同様
+
+    // // -----for文-------
+    // for(let i=0; i<10; i++){
+    //   if(i % 2 === 0 )continue;
+    //   console.log(i);
+    // }
+
+    // // -----for文-------
+    // for(let i = 0 ; i< 10 ;  i= i + 2){
+    //   console.log(i);
+    //   if(i === 6) break;
+    // }
+
+    // // -----while文------- 
+    // let state = true;
+
+    //   // 0〜9の乱数を生成する
+    //   while(state) {
+    //     let random = Math.floor(Math.random()*10);
+
+    //   // 数値が3になったら繰り返し処理を終了する
+    //   if(random === 3)  state = false; // break;でも可
+
+    //   console.log(random)
+    // }
+
+    // // -----switch文------- 
+    //     const user = ['田中太郎','佐藤一郎','山田次郎', '伊藤三郎'];
+    //     user.forEach(name =>{
+    //       switch(name){
+    //         case'田中太郎':
+    //           console.log(name + 'は営業部 第一課です');
+    //           break;
+    //         case'山田次郎':
+    //           console.log(name + 'は製造部 生産管理課です');
+    //           break;
+    //         default:
+    //           console.log(name + 'は該当データがありません');
+    //       }
+    //     })
+
+    //-----三項演算子------- 
+    //   const user = ['田中太郎','佐藤一郎','山田次郎', '山田三郎', '伊藤花子'];
+
+    //   user.forEach(name => {
+
+    //       name === '山田三' ? console.log('存在します') : console.log('いません');
+
+    //   })
+    // -----If文------- 
+    // const user = ['田中三郎','佐藤一郎', '山田三郎', '伊藤花子'];
+    // user.forEach(name => {
+    //     if(name === '山田三郎') {
+
+    //         console.log('山田三郎さんは存在します');
+
+    //     }else if(name === '山田花子'){
+
+    //         console.log('山田花子さんは存在します');
+
+    //     }else if(name === '田中三郎'){
+    //         console.log('田中三郎さんは存在します');
+    //     }else{
+    //         console.log('該当するユーザーは存在しません');
+    //     }
+
+    // })
+
+    // -----等価演算子と厳密等価演算子------- 
+    // console.log('5' == 5);  // true
+
+    // console.log('5' === 5); // false
+
+    // -----forEach------- 
+    // const user = ['田中太郎','佐藤一郎','山田次郎', '伊藤花子'];
+    // user.forEach( element => {
+    //     console.log(element);
+    // })
+
+    // -----map-------   
+    // const myNumber = ['田中太郎','佐藤一郎','山田次郎'];
+    // const result = myNumber.map( element => {
+    //     return element + 'さん';
+    // })
+    // console.log(result);
+
+    // -----filter-------      
+    // const userID = ['user34','','user18','','user55','user38'];
+    // const result = userID.filter( element => {
+    //     return element !== '';
+    // })
+    // console.log(result);
+
+    // -----push-------      
+    // const cart = ['Kindle Fire HD 10', 19980, 1];
+    // cart.push(100); //100ポイント追加
+    // console.log(cart);
+    // console.log('商品名：' + cart[0]);
+    // console.log('価格：' + cart[1] + '円');
+    // console.log('個数：' + cart[2]);
+
+    // -----じゃんけん-------
+    // const janken = ['グー','チョキ','パー'];
+    // const rnd = Math.floor(Math.random() * janken.length);
+    // console.log(janken[rnd]);
+  </script>
+</body>
+
+</html>
